@@ -88,7 +88,6 @@
                 android:textSize="18sp"
                 android:textColor="@color/lavender"/>
 
-
             <TextView
                 android:id="@+id/others"
                 android:layout_width="wrap_content"
@@ -124,8 +123,6 @@
                     android:layout_margin="20dp"
                     android:src="@drawable/twitter" />
             </LinearLayout>
-
-
 
         </LinearLayout>
 
