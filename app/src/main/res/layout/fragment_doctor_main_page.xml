@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DoctorMainPageFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/doctorMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin.50"
+            android:gravity="center"
+            android:text="@string/doctorTitle"
+            android:textColor="@color/white"
+            android:textSize="@dimen/titleTextSize.35"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/doctorViewPatientDetailsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctorMainTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/viewPaD" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/writePrescriptionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctorViewPatientDetailsBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/default_margin.20"
+            android:layout_marginTop="@dimen/default_margin.20"
+            android:layout_marginEnd="@dimen/default_margin.20"
+            android:layout_marginBottom="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/writePres" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/doctorOwnProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/writePrescriptionBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/default_margin.20"
+            android:layout_marginTop="@dimen/default_margin.20"
+            android:layout_marginEnd="@dimen/default_margin.20"
+            android:layout_marginBottom="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/doctorDetails" />
+
+        <Button
+            android:id="@+id/backButtonDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctorOwnProfile"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin.top.16"
+            android:layout_marginEnd="@dimen/default_margin.end.36"
+            android:background="@drawable/round_btn"
+            android:gravity="center"
+            android:text="@string/logO" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

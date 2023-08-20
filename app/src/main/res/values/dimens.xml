@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleTextSize.35">35sp</dimen>
+    <dimen name="default_margin.50">50dp</dimen>
+    <dimen name="default_margin.20">20dp</dimen>
+    <dimen name="default_margin.top.16">16dp</dimen>
+    <dimen name="default_margin.end.36">36dp</dimen>
+    <dimen name="default_padding">25dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+</resources>

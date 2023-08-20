@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/patientMainPage"
+    tools:context=".ui.PatientMainPageFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+        <TextView
+            android:id="@+id/patientMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin.50"
+            android:layout_marginTop="@dimen/default_margin.50"
+            android:layout_marginEnd="@dimen/default_margin.50"
+            android:layout_marginBottom="@dimen/default_margin.50"
+            android:gravity="center"
+            android:text="@string/patientTitle"
+            android:textColor="@color/white"
+            android:textSize="@dimen/titleTextSize.35"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/patientMainTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/bookAppoint" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookAppointment"
+            android:layout_centerHorizontal="true"
+           android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/viewAppoint" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewPrescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewAppointment"
+            android:layout_centerHorizontal="true"
+           android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/viewPres" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewOwnDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewPrescription"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/default_margin.20"
+            android:layout_marginTop="@dimen/default_margin.20"
+            android:layout_marginEnd="@dimen/default_margin.20"
+            android:layout_marginBottom="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/viewPaD" />
+
+        <Button
+            android:id="@+id/logOutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewOwnDetails"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin.top.16"
+            android:layout_marginEnd="@dimen/default_margin.end.36"
+            android:background="@drawable/round_btn"
+            android:gravity="center"
+            android:text="@string/logO" />
+    </RelativeLayout>
+</FrameLayout>

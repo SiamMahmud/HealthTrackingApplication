@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AdminMainPageFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/adminMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+           android:layout_margin="@dimen/default_margin.50"
+            android:text="@string/adminTitle"
+            android:textColor="@color/white"
+            android:textSize="@dimen/titleTextSize.35"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewPDetailsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adminMainTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/viewPaD"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/removePatientDetailsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewPDetailsBtn"
+            android:layout_centerHorizontal="true"
+           android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/removeP" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createAppointmentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/removePatientDetailsBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/createA" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelAppointmentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/createAppointmentBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/default_margin.20"
+            android:background="@drawable/round_btn"
+            android:text="@string/cancelA" />
+
+        <Button
+            android:id="@+id/blogInBtnAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cancelAppointmentBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin.top.16"
+            android:layout_marginEnd="@dimen/default_margin.end.36"
+            android:background="@drawable/round_btn"
+            android:gravity="center"
+            android:text="@string/logO" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

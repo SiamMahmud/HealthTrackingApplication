@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PatientTracking</string>
+    <string name="patientTitle">Patient Home Page</string>
+    <string name="bookAppoint">Book An Appointment</string>
+    <string name="viewAppoint">View An Appointment</string>
+    <string name="viewPres">View Prescription</string>
+    <string name="viewPaD">View Patient Details</string>
+    <string name="logO">Log out</string>
+
+    <string name="adminTitle">Admin Home Page</string>
+    <string name="removeP">Remove Patient Details</string>
+    <string name="createA">Create Appointment</string>
+    <string name="cancelA">Cancel Appointment</string>
+
+    <string name="doctorTitle">Doctor Home Page</string>
+    <string name="writePres">Write Prescription</string>
+    <string name="doctorDetails">View Profile Details</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
