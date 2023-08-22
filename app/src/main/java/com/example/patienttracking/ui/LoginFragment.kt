@@ -30,7 +30,7 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
@@ -45,10 +45,12 @@ class LoginFragment : Fragment() {
         loginButton.setOnClickListener {
             val emailE = email.text.toString()
             val passP = pass.text.toString()
-
+            val loading = LoadingDialog(requireActivity())
+            loading.startLoading()
             if (emailE.isNotBlank() && passP.isNotEmpty()) {
                 auth.signInWithEmailAndPassword(emailE, passP)
                     .addOnCompleteListener { task ->
+                        loading.isDismiss()
                         if (task.isSuccessful) {
                             val currentUser = auth.currentUser
                             currentUser?.let { firebaseUser ->
@@ -75,7 +77,9 @@ class LoginFragment : Fragment() {
                                 }
                             }
                         } else {
-                            Log.d("LoginFragment", "signInWithEmailAndPassword:failure", task.exception)
+                            Log.d("LoginFragment",
+                                "signInWithEmailAndPassword:failure",
+                                task.exception)
                         }
                     }
             } else {
@@ -98,7 +102,6 @@ class LoginFragment : Fragment() {
             val forgotPasswordFragment = ForgetPasswordFragment()
             openFragment(forgotPasswordFragment)
         }
-
         return view
     }
 
@@ -109,31 +112,6 @@ class LoginFragment : Fragment() {
     }
 }
 
-
-//    private fun setData(pass: String) {
-//        val doctorDatabase = getInstance().getReference("Doctor")
-//        val adminDatabase = getInstance().getReference("Admin")
-//        val userDatabase = getInstance().getReference("Users")
-//
-//        val domain = firebaseAuth.currentUser?.email?.substringAfterLast("@")
-//        val database: DatabaseReference = when (domain) {
-//            "doctor.com" -> doctorDatabase
-//            "admin.com" -> adminDatabase
-//            "gmail.com" -> userDatabase
-//            else -> userDatabase
-//        }
-//        database.child(pass).get().addOnSuccessListener { snapshot ->
-//            if (snapshot.exists()) {
-//                SignUp.userEmail = snapshot.child("email").value as String
-//                SignUp.userName = snapshot.child("name").value as String
-//                SignUp.userPhoneNumber = snapshot.child("phoneNumber").value as String
-//            } else {
-//                makeText(requireContext(), "User already exists", Toast.LENGTH_LONG).show()
-//            }
-//        }.addOnFailureListener {
-//            makeText(requireContext(), "User not found", Toast.LENGTH_LONG).show()
-//        }
-//    }
 
 
 
