@@ -1,6 +1,7 @@
 package com.example.patienttracking.ui
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -87,6 +88,17 @@ class LoginFragment : Fragment() {
 
                 }
             }
+            val loading = LoadingDialog(requireActivity())
+            loading.startLoading()
+            val handler = Handler()
+            handler.postDelayed(object :Runnable{
+                override fun run() {
+                    loading.isDismiss()
+                }
+
+            },2000)
+
+
         }
 
         signUpButton.setOnClickListener {
