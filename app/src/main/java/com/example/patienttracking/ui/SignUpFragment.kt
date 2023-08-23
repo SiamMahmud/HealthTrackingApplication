@@ -62,10 +62,13 @@ class SignUpFragment : Fragment() {
                 userP.error = "Phone Number Required"
                 return@setOnClickListener
             } else {
+                val loading = LoadingDialog(requireActivity())
+                loading.startLoading()
                 database = FirebaseDatabase.getInstance().getReference("Users")
                 database = FirebaseDatabase.getInstance().getReference("Doctor")
                 database = FirebaseDatabase.getInstance().getReference("Admin")
                 firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {authTask ->
+                    loading.isDismiss()
                     if (authTask.isSuccessful) {
                         Toast.makeText(activity, "Sign Up Confirmed", Toast.LENGTH_LONG).show()
                         val uid = authTask.result.user?.uid
