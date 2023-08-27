@@ -20,7 +20,7 @@ class PatientMainPageFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-         val view =  inflater.inflate(R.layout.fragment_patient_main_page, container, false)
+        val view =  inflater.inflate(R.layout.fragment_patient_main_page, container, false)
         val bookAppointBtn = view.findViewById<Button>(R.id.bookAppointment)
         val viewAppointBtn = view.findViewById<Button>(R.id.viewAppointment)
         val viewPrescripBtn = view.findViewById<Button>(R.id.viewPrescription)
@@ -31,22 +31,18 @@ class PatientMainPageFragment : Fragment() {
         con?.let {
             builder = AlertDialog.Builder(con)
         }
-
-
         bookAppointBtn.setOnClickListener {
             val patientBookAppointPage = PatientBookAppointmentFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.frameLayout,patientBookAppointPage)
             transaction.commit()
         }
-
         viewAppointBtn.setOnClickListener {
             val patientViewAppointPage = PatientViewAppointmentFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.frameLayout,patientViewAppointPage)
             transaction.commit()
         }
-
         viewPrescripBtn.setOnClickListener {
             val patientViewPrescripPage = PatientVIewPrescriptionFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -54,10 +50,13 @@ class PatientMainPageFragment : Fragment() {
             transaction.commit()
         }
         viewDetails.setOnClickListener {
+            
             val patientViewDetailsPage = ViewProfileFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.frameLayout,patientViewDetailsPage)
             transaction.commit()
+
+
         }
         logoutBtn.setOnClickListener {
             con?.let {

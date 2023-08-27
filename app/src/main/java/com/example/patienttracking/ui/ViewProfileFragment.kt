@@ -36,13 +36,11 @@ class ViewProfileFragment : Fragment() {
         val homeBackBtn = view.findViewById<Button>(R.id.profileBackBtn)
         val logOutBtn = view.findViewById<TextView>(R.id.profileLogOutBtn)
         val pEdit = view.findViewById<Button>(R.id.editProfile)
-
         var builder : AlertDialog.Builder
         var con = this.context
         con?.let {
             builder = AlertDialog.Builder(con)
         }
-
         homeBackBtn.setOnClickListener {
             val patientMainPage = PatientMainPageFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -77,6 +75,8 @@ class ViewProfileFragment : Fragment() {
         }
 
         val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email
+        val loading = LoadingDialog(requireActivity())
+        loading.startLoading()
         currentUserEmail?.let { email ->
             databaseReference?.child("Users")?.orderByChild("email")?.equalTo(email)
                 ?.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -88,6 +88,8 @@ class ViewProfileFragment : Fragment() {
                                 nameTextView.text = user.name
                                 emailTextView.text = user.email
                                 numberTextView.text = user.phoneNumber
+                                loading.isDismiss()
+
                             }
                         } else {
                             Toast.makeText(activity, "Data not found", Toast.LENGTH_LONG).show()
