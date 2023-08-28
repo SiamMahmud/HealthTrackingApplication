@@ -165,6 +165,7 @@
                     android:text="Home Page "
                     android:layout_marginLeft="10dp"
                     android:textColor="#fff" />
+
             </LinearLayout>
         </LinearLayout>
 

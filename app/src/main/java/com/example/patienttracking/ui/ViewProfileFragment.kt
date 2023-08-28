@@ -58,7 +58,6 @@ class ViewProfileFragment : Fragment() {
             con?.let {
                 builder = AlertDialog.Builder(con)
                 builder.setTitle("Alert!")
-
                     .setMessage("Do you want to log Out?")
                     .setCancelable(true)
                     .setPositiveButton("Yes"){dialogInterface,it->
@@ -89,13 +88,11 @@ class ViewProfileFragment : Fragment() {
                                 emailTextView.text = user.email
                                 numberTextView.text = user.phoneNumber
                                 loading.isDismiss()
-
                             }
                         } else {
                             Toast.makeText(activity, "Data not found", Toast.LENGTH_LONG).show()
                         }
                     }
-
                     override fun onCancelled(databaseError: DatabaseError) {
                         Log.e("ViewProfileFragment", "Data retrieval cancelled: ${databaseError.message}")
                     }
