@@ -24,10 +24,8 @@ class LoginFragment : Fragment() {
     private lateinit var loginButton: Button
     private lateinit var signUpButton: TextView
     private lateinit var forgotPassword: TextView
-
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -39,9 +37,7 @@ class LoginFragment : Fragment() {
         loginButton = view.findViewById(R.id.loginBtn)
         signUpButton = view.findViewById(R.id.GoSignUpBtn)
         forgotPassword = view.findViewById(R.id.forgetPassword)
-
         auth = FirebaseAuth.getInstance()
-
         loginButton.setOnClickListener {
             val emailE = email.text.toString()
             val passP = pass.text.toString()
