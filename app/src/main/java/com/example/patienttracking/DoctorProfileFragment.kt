@@ -51,7 +51,6 @@ class DoctorProfileFragment : Fragment() {
         con?.let {
             builder = AlertDialog.Builder(con)
         }
-
         backButtonP.setOnClickListener {
             val mainPage = DoctorMainPageFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
@@ -60,7 +59,7 @@ class DoctorProfileFragment : Fragment() {
         }
 
         updateDoctorProfileDetails.setOnClickListener {
-            val dUpdate = DoctorUpdateProfileFragment()
+            val dUpdate = DoctorProfileViewByPatientFragment()
             val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.frameLayout, dUpdate)
             transaction.commit()
